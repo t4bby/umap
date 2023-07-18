@@ -170,7 +170,7 @@ EFI_STATUS EFIAPI ImgArchStartBootApplicationHook(VOID *appEntry,
     // Hook BlImgAllocateImageBuffer to allocate the mapper's buffer
     funcCall =
         FindPattern(imageBase, imageSize,
-            "\xE8\x00\x00\x00\x00\x4C\x8B\x6D\x60", "x????xxxx");
+            "\xE8\x00\x00\x00\x00\x8B\xD8\x85\xC0\x0F\x88\x8E\x00\x00\x00\x21\x7C\x24\x28", "x????xxxxxxx???xxxx");
 
     if (!funcCall) {
         Print(L"Failed to find BlImgAllocateImageBuffer\n");
